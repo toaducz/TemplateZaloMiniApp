@@ -7,7 +7,6 @@ const Cart: React.FunctionComponent = () => {
   const [cart, setCart] = useState<Flower[]>([]);
   const navigate = useNavigate();
 
-  // Lấy giỏ hàng từ localStorage khi trang giỏ hàng được load
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
@@ -15,7 +14,6 @@ const Cart: React.FunctionComponent = () => {
     }
   }, []);
 
-  // Cập nhật lại giỏ hàng vào localStorage
   useEffect(() => {
     if (cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(cart));
@@ -25,10 +23,12 @@ const Cart: React.FunctionComponent = () => {
   const removeFromCart = (id: number) => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   const clearCart = () => {
     setCart([]);
+    localStorage.removeItem("cart"); 
   };
 
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
@@ -53,7 +53,7 @@ const Cart: React.FunctionComponent = () => {
                   <Box style={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
                     <Button
                       size="small"
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => removeFromCart(item.id)} 
                     >
                       Xoá
                     </Button>
