@@ -34,7 +34,7 @@ const ProductDetail: React.FunctionComponent = () => {
       const updatedCart = [...prev, product];
       return updatedCart;
     });
-    navigate("/cart");
+    startTransition(() => navigate("/cart"));
   };
 
   const checkAvailable = () => {

@@ -31,6 +31,18 @@ const Cart: React.FunctionComponent = () => {
     localStorage.removeItem("cart"); 
   };
 
+  useEffect(() => {
+    const handleStorageChange = () => {
+      const savedCart = localStorage.getItem("cart");
+      if (savedCart) {
+        setCart(JSON.parse(savedCart));
+      }
+    };
+  
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
+
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
   return (
