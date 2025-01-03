@@ -23,25 +23,12 @@ const Cart: React.FunctionComponent = () => {
   const removeFromCart = (id: number) => {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   const clearCart = () => {
     setCart([]);
     localStorage.removeItem("cart"); 
   };
-
-  useEffect(() => {
-    const handleStorageChange = () => {
-      const savedCart = localStorage.getItem("cart");
-      if (savedCart) {
-        setCart(JSON.parse(savedCart));
-      }
-    };
-  
-    window.addEventListener("storage", handleStorageChange);
-    return () => window.removeEventListener("storage", handleStorageChange);
-  }, []);
 
   const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
