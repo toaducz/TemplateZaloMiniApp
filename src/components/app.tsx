@@ -17,6 +17,7 @@ import Cart from "../pages/cart";
 import ProductDetail from "../pages/product-detail";
 import NewsDetail from "../pages/news-detail";
 import SearchResults from "../pages/searchResults";
+import Checkout from "../pages/checkout";
 
 
 const MyApp = () => {
@@ -42,6 +43,7 @@ const MyApp = () => {
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/news/:id" element={<NewsDetail />} />
               <Route path="/search-results" element={<SearchResults />} />
+              <Route path="/checkout" element={<Checkout />} />
             </AnimationRoutes>
             
             <BottomNav /> 
