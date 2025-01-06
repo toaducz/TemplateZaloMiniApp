@@ -5,7 +5,6 @@
   "description": "zmp-blank-templates",
   "repository": "",
   "license": "UNLICENSED",
-  "proxy": "https://staging-shop.fado.vn",
   "browserslist": [
     "Android >= 5",
     "IOS >= 9.3",

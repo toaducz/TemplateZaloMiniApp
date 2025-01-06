@@ -1,19 +1,69 @@
 import React, { useState, useEffect } from "react";
 import { Box, Text, useNavigate, Grid, Button, Icon, ZBox } from "zmp-ui";
-import { Flower } from "../type";
-import flowers_data from "../mock/flowers.json";
 
 
 const ProductItem: React.FunctionComponent = () => {
-  const [flowers] = useState<Flower[]>(flowers_data);
+  const [flowers,setFlowers] = useState<any>([]);
   const navigate = useNavigate();
-  const [temp,setTemp] = useState(2)
+  const [temp,setTemp] = useState(2);
+  const [loading, setLoading] = useState(true); 
+
 
   // lấy 6 item mới nhất
-  const latestFlowers = flowers
-    .slice() 
-    .sort((a, b) => b.id - a.id) 
-    .slice(0, 6); 
+  // const latestFlowers = flowers
+  //   .slice() 
+  //   .sort((a, b) => b.id - a.id) 
+  //   .slice(0, 6); 
+
+  const fado = "https://staging-shop.fado.vn/"
+
+  const headers = new Headers({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer 1|CVPgFpL9i1kYdzGUrz02ySMn76kBoseALxXHHDL713f60738',
+    'apikey': '9cdfc6b4-2b4b-44b5-b427-b27c0dc32dfa',
+    'apiconnection': 'appmobile',
+    
+  });
+
+  const formatter = new Intl.NumberFormat("vi-VN", {
+    style: "decimal",
+    minimumFractionDigits: 0,
+  });
+  
+  useEffect(() => {
+        checkWidth();
+        const fetchProducts = async () => {
+          try {
+            const response = await fetch(
+              '/api/admin/products?page[number]=1',
+              {
+                method: 'GET',
+                headers: headers,
+              }
+              
+            );
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+  
+            // data.data.map(cate => {
+            //   console.log(cate.descriptions[0].title)
+            // })
+  
+            setFlowers([...data.data]);
+  
+            // console.log(data.data)
+  
+            setLoading(false);
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
+        };
+        
+  
+        fetchProducts();
+      }, []);
 
   const checkWidth = () => {
     if(window.innerWidth <= 299){
@@ -27,12 +77,17 @@ const ProductItem: React.FunctionComponent = () => {
   useEffect(() => {
         checkWidth();
   },[]) 
+
+  if (loading) {
+        return <Text>Đang tải dữ liệu...</Text>;
+      }
+  
     
   return (
    
       <Box className="section-container-no-colors">
         <Grid columnSpace="1rem" columnCount={temp}  >
-        {latestFlowers.map((flower) => (
+        {flowers.map((flower) => (
         
           <Box className="section-container"
             key={flower.id}
@@ -49,7 +104,7 @@ const ProductItem: React.FunctionComponent = () => {
               style={{
                 width: "9em",
                 height: "9em",
-                backgroundImage: `url(${flower.source})`,
+                backgroundImage: `url(${fado + flower.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 borderRadius: "8px",
@@ -68,7 +123,7 @@ const ProductItem: React.FunctionComponent = () => {
                         width: "100%",
                     }}
                     >
-                    {flower.name}
+                    {flower.descriptions?.[1]?.name ?? "Không có tên"}
                     </Text>
                 </Box>
             <Grid columnCount={2} columnSpace="1rem" 
@@ -84,7 +139,7 @@ const ProductItem: React.FunctionComponent = () => {
                     alignItems: "center",
                    }}
                 >
-                  {flower.price.toLocaleString() + "đ"}
+                  {formatter.format(flower.price.toLocaleString()) + "₫"}
                 </Box>
                 <Box
                   style={{

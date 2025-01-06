@@ -1,7 +1,7 @@
 import React from "react";
 import {Box,Grid,useNavigate, Center, Icon, Text} from "zmp-ui";
 
-const HeaderPproduct: React.FunctionComponent<{title:string}> = ({title}) => {
+const CartProduct: React.FunctionComponent = () => {
     const navigate = useNavigate();
     return(
         <Box className="header"
@@ -35,7 +35,7 @@ const HeaderPproduct: React.FunctionComponent<{title:string}> = ({title}) => {
                         textAlign: "center",
                       }}
                 >
-                    <Text>{title}</Text>
+                    <Text>Giỏ hàng</Text>
                 </Box>
                 <Box px={2}
                     style={{
@@ -54,4 +54,4 @@ const HeaderPproduct: React.FunctionComponent<{title:string}> = ({title}) => {
     )
 };
 
-export default HeaderPproduct;
+export default CartProduct;
