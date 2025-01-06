@@ -1,7 +1,7 @@
 import React from "react";
 import {Box,Grid,useNavigate, Center, Icon} from "zmp-ui";
 
-const Header_home: React.FunctionComponent = () => {
+const HeaderHome: React.FunctionComponent = () => {
     const navigate = useNavigate();
     return(
         <Box className="header"
@@ -35,4 +35,4 @@ const Header_home: React.FunctionComponent = () => {
     )
 };
 
-export default Header_home;
+export default HeaderHome;

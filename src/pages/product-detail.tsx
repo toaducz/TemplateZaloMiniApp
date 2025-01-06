@@ -1,6 +1,6 @@
 import React, { useState, useEffect, startTransition } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Page, Box, Text, Button, Stack, Center } from "zmp-ui";
+import { Page, Box, Text, Button, Stack, Center, Spinner } from "zmp-ui";
 import HeaderProduct from "../header/product-header";
 
 const ProductDetail: React.FunctionComponent = () => {
@@ -72,7 +72,7 @@ const ProductDetail: React.FunctionComponent = () => {
 
 
   if (!flower) {
-    return <Text>Lỗi</Text>;
+    return <Center intrinsic><Spinner></Spinner></Center>;
   }
 
   const addToCart = () => {

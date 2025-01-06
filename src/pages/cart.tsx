@@ -50,13 +50,14 @@ const Cart: React.FunctionComponent = () => {
           <>
             <Grid columnCount={1} columnSpace="1rem">
               {cart.map((item) => (
-                <Box key={item.id} style={{ padding: "10px", borderBottom: "1px solid #ccc" }}>
+                <Box key={item[0].id} style={{ padding: "10px", borderBottom: "1px solid #ccc" }}>
                   <Grid columnCount={2} columnSpace="1rem">
                     <Box style={{ flex: 1 }}>
                       <Text>{item[0].descriptions?.[1]?.name ?? "Không có tên"}</Text>
                       <Text>{formatter.format(item[0].price)}đ</Text>
                     </Box>
                     <Box style={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
+                       {/* bug */}
                       <Button
                         size="small"
                         onClick={() => removeFromCart(item.id)} 
@@ -74,6 +75,7 @@ const Cart: React.FunctionComponent = () => {
               </Text>
             </Box>
             <Box style={{ marginTop: "16px" }}>
+
               <Button onClick={() => navigate("/checkout")} fullWidth>
                 Tiến hành thanh toán
               </Button>

@@ -5,16 +5,18 @@ import SwiperAutoPlay from "../components/swipper";
 import Grids from "../components/grid";
 import ButtonToast from "../components/button-toast";
 import ShareButton from "./share-button";
-import Product_Item from "../components/product-item";
+import ProductItem from "../components/product-item";
 import NewsItem from "../components/news-item";
-import Header_home from "../header/home-header";
+import HeaderHome from "../header/home-header";
+import BrandsItem from "../components/brand-item";
+
 
 const HomePage: React.FunctionComponent = () => {
   const navigate = useNavigate();
   return (
     <Page hideScrollbar={true}>
 
-    <Header_home/>
+    <HeaderHome/>
 
       <Page className="page" restoreScrollOnBack = {true}>
         
@@ -31,7 +33,7 @@ const HomePage: React.FunctionComponent = () => {
         </Box>
 
         <div >
-          <Product_Item/>
+          <ProductItem/>
         </div>
 
         <Box my={4} textAlign="center" >
@@ -72,6 +74,14 @@ const HomePage: React.FunctionComponent = () => {
         {/* <div className="section-container">
           <ButtonToast/>
         </div> */}
+        <Box my={4} textAlign="center" >
+          <Text
+            size="xLarge"
+            bold
+          > BRANDS ?</Text>
+        </Box>
+
+          <BrandsItem/>
       </Page>
     </Page>
   );
