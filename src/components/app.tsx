@@ -7,16 +7,16 @@ import About from "../pages/about";
 import Form from "../pages/form";
 import User from "../pages/user";
 import Setting from "../pages/setting"
-import BottomNav from "../components/bottomNavigation";
+import BottomNav from "./bottom-navigation";
 import Phones from "../pages/phones";
-import ShareButton from "../pages/shareButton";
-import ChatButton from "./chatButton";
-import News_page from "../pages/news_page";
+import ShareButton from "../pages/share-button";
+import ChatButton from "./chat-button";
+import News_page from "../pages/news-page";
 import Search from "../pages/search";
 import Cart from "../pages/cart";
 import ProductDetail from "../pages/product-detail";
 import NewsDetail from "../pages/news-detail";
-import SearchResults from "../pages/searchResults";
+import SearchResults from "../pages/search-results";
 import Checkout from "../pages/checkout";
 
 

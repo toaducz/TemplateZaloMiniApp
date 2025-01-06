@@ -5,6 +5,7 @@
   "description": "zmp-blank-templates",
   "repository": "",
   "license": "UNLICENSED",
+  "proxy": "https://staging-shop.fado.vn",
   "browserslist": [
     "Android >= 5",
     "IOS >= 9.3",
@@ -22,6 +23,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
     "axios": "^1.7.9",
+    "cors": "^2.8.5",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

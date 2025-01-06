@@ -4,7 +4,7 @@ import Theme from "../components/theme";
 import Sound from "../components/sound";
 import Modals from "../components/Modal";
 import Location from "../components/location";
-import Date from "../components/date_time";
+import Date from "../components/date-time";
 
 const Setting: React.FunctionComponent = () =>{ 
     const navigate = useNavigate();

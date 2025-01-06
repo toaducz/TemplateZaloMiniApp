@@ -3,8 +3,8 @@ import { List, Page, Icon, useNavigate, useSnackbar, Text, Center, Box} from "zm
 import UserCard from "../components/user-card";
 import SwiperAutoPlay from "../components/swipper";
 import Grids from "../components/grid";
-import ButtonToast from "../components/buttonToast";
-import ShareButton from "./shareButton";
+import ButtonToast from "../components/button-toast";
+import ShareButton from "./share-button";
 import Product_Item from "../components/product-item";
 import NewsItem from "../components/news-item";
 import Header_home from "../header/home-header";
