@@ -57,7 +57,7 @@ const Cart: React.FunctionComponent = () => {
                       <Text>{formatter.format(item[0].price)}đ</Text>
                     </Box>
                     <Box style={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
-                       {/* bug */}
+                       {/* bug */}  
                       <Button
                         size="small"
                         onClick={() => removeFromCart(item.id)} 

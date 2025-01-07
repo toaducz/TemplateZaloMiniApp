@@ -18,18 +18,21 @@ import ProductDetail from "../pages/product-detail";
 import NewsDetail from "../pages/news-detail";
 import SearchResults from "../pages/search-results";
 import Checkout from "../pages/checkout";
+import Currency,{CurrencyContext} from "./currency";
+import AllProduct from "../pages/all-products";
 
 
 const MyApp = () => {
   return (
     
     <RecoilRoot>
-      
+
       <App>
      
         <SnackbarProvider>
           <ZMPRouter>
             <AnimationRoutes>
+              
               <Route path="/" element={<HomePage></HomePage>}></Route>
               <Route path="/about" element={<About></About>}></Route>
               <Route path="/form" element={<Form></Form>}></Route>
@@ -44,10 +47,12 @@ const MyApp = () => {
               <Route path="/news/:id" element={<NewsDetail />} />
               <Route path="/search-results" element={<SearchResults />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/all-products" element={<AllProduct></AllProduct>}></Route>
             </AnimationRoutes>
-            
+            {/* <Currency/> */}
             <BottomNav /> 
             <ChatButton /> 
+            
           </ZMPRouter>
           
         </SnackbarProvider>

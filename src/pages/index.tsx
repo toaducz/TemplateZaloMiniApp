@@ -36,6 +36,10 @@ const HomePage: React.FunctionComponent = () => {
           <ProductItem/>
         </div>
 
+        <Box>
+          <Text onClick={() => navigate("/all-products")}>Tất cả sản phẩm</Text>
+        </Box>
+
         <Box my={4} textAlign="center" >
           <Text
             size="xLarge"

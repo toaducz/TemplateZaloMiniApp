@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,startTransition } from "react";
 import { Box, Text, useNavigate, Grid, Button, Icon, ZBox } from "zmp-ui";
 
 
@@ -91,7 +91,7 @@ const ProductItem: React.FunctionComponent = () => {
         
           <Box className="section-container"
             key={flower.id}
-            onClick={() => navigate(`/product/${flower.id}`)}
+            onClick={()=>(startTransition(() => navigate(`/product/${flower.id}`)))}
             style={{
               borderRadius: "8px",
               padding: "8px",

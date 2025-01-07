@@ -1,13 +1,25 @@
-import React, { useState, useEffect, startTransition } from "react";
+import React, { useState, useEffect, startTransition, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Page, Box, Text, Button, Stack, Center, Spinner } from "zmp-ui";
 import HeaderProduct from "../header/product-header";
+import Currency, {CurrencyContext} from "../components/currency";
 
 const ProductDetail: React.FunctionComponent = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [cart, setCart] = useState<any[]>([]);
   const [flower, setFlower] = useState<any>();
+  // const [rate, setRate] = useState(1);
+  // const [symbol, setSymbol] = useState("₫");
+  const currencies = useContext(CurrencyContext)
+
+  if(!currencies){
+    return(<div>Loading</div>)
+  }
+
+  useEffect(() => {
+    console.log("Exchange rate in productDetail :", currencies);
+  }, [currencies]);
 
   const fado = "https://staging-shop.fado.vn/"
 
@@ -92,6 +104,7 @@ const ProductDetail: React.FunctionComponent = () => {
 
   return (
     <Page hideScrollbar={true}>
+      <Currency/>
       <HeaderProduct title={flower[0].descriptions?.[1]?.name ?? "Không có tên"} />
       <Page className="page">
         <Stack>
@@ -115,7 +128,7 @@ const ProductDetail: React.FunctionComponent = () => {
               {flower[0].descriptions?.[1]?.name ?? "Không có tên"}
             </Text>
             <Text size="normal" color="primary">
-              {formatter.format(flower[0].price) + "₫"}
+              {formatter.format(flower[0].price * currencies) + "₫"}
             </Text>
           </Stack>
           <Box className="section-container-product-detail">
