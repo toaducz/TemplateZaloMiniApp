@@ -5,9 +5,9 @@ import CartHeader from "../header/cart-header";
 const AllProduct: React.FunctionComponent = () => {
   const [flowers, setFlowers] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1); // Trang hiện tại
-  const [totalPages, setTotalPages] = useState(1); // Tổng số trang
-  const [perPage, setPerPage] = useState(0); // Số phần tử trên mỗi trang
+  const [page, setPage] = useState(1); 
+  const [totalPages, setTotalPages] = useState(1); 
+  const [perPage, setPerPage] = useState(0); 
   const navigate = useNavigate();
 
   const fado = "https://staging-shop.fado.vn/"
@@ -42,7 +42,6 @@ const AllProduct: React.FunctionComponent = () => {
 
         const data = await response.json();
 
-        // Lưu dữ liệu và thông tin phân trang
         setFlowers(data.data);
         setPerPage(data.per_page);
         setTotalPages(Math.ceil(data.total / data.per_page));
@@ -54,7 +53,7 @@ const AllProduct: React.FunctionComponent = () => {
     };
 
     fetchProducts();
-  }, [page]); // Gọi lại API khi thay đổi số trang
+  }, [page]); 
 
   const handlePrevious = () => {
     if (page > 1) setPage(page - 1);
@@ -120,7 +119,6 @@ const AllProduct: React.FunctionComponent = () => {
         ))}
       </Grid>
 
-      {/* Phân trang */}
       <Box style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}>
         <Button
           size="small"
