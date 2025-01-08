@@ -1,10 +1,10 @@
 import React, { Suspense,useState } from "react";
-import { List, Page, Icon, useNavigate, useSnackbar, Text, Center, Box} from "zmp-ui";
-import UserCard from "../components/user-card";
+import { List, Page, Icon, useNavigate, useSnackbar, Text, Center, Box, Button} from "zmp-ui";
 import SwiperAutoPlay from "../components/swipper";
-import Grids from "../components/grid";
-import ButtonToast from "../components/button-toast";
-import ShareButton from "./share-button";
+// import UserCard from "../components/user-card";
+// import Grids from "../components/grid";
+// import ButtonToast from "../components/button-toast";
+// import ShareButton from "./share-button";
 import ProductItem from "../components/product-item";
 import NewsItem from "../components/news-item";
 import HeaderHome from "../header/home-header";
@@ -37,7 +37,12 @@ const HomePage: React.FunctionComponent = () => {
         </div>
 
         <Box>
-          <Text onClick={() => navigate("/all-products")}>Tất cả sản phẩm</Text>
+          <Center intrinsic>
+            <Button onClick={() => navigate("/all-products")}
+            
+              >Tất cả sản phẩm...
+            </Button>
+          </Center>
         </Box>
 
         <Box my={4} textAlign="center" >
