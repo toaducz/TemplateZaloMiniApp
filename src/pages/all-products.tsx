@@ -87,19 +87,6 @@ const AllProduct: React.FunctionComponent = () => {
       <CartHeader />
       <Page className="page">
         <Box className="section-container-no-colors">
-          <Box style={{ display: "flex", justifyContent: "center", marginTop: "1rem", alignItems: "center", gap: "1rem" }}>
-            Bạn đang ở trang:
-            <Input
-              value={inputPage}
-              placeholder=""
-              onChange={handleInputChange}
-              style={{ width: "3rem", textAlign: "center" }}
-            />
-            <Button size="small" onClick={handleJumpToPage}>
-              Đi
-            </Button>
-          </Box>
-
           <Box my={4} textAlign="center" >
             <Text
               size="xLarge"
@@ -137,10 +124,10 @@ const AllProduct: React.FunctionComponent = () => {
                   bold
                   style={{
                     textAlign: "center",
-                    whiteSpace: "nowrap",
+                    // whiteSpace: "nowrap",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
-                    width: "100%",
+                    // width: "100%",
                   }}
                 >
                   {flower.descriptions?.[1]?.name ?? "Không có tên"}
@@ -177,6 +164,18 @@ const AllProduct: React.FunctionComponent = () => {
             </Button>
           </Box>
         </Box>
+        <Box style={{ display: "flex", justifyContent: "center", marginTop: "1rem", alignItems: "center", gap: "1rem" }}>
+            Bạn đang ở trang:
+            <Input
+              value={inputPage}
+              placeholder=""
+              onChange={handleInputChange}
+              style={{ width: "3rem", textAlign: "center" }}
+            />
+            <Button size="small" onClick={handleJumpToPage}>
+              Đi
+            </Button>
+          </Box>
       </Page>
     </Page>
   );
