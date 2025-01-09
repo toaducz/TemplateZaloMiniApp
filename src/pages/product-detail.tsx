@@ -47,6 +47,8 @@ const ProductDetail: React.FunctionComponent = () => {
     if (cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(cart));
     }
+    console.log("lấy giỏ hàng bên product: ")
+    console.log(cart)
   }, [cart]);
 
   useEffect(() => {

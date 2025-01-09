@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Text, Button, Grid, Icon, Page } from "zmp-ui";
 import { useNavigate } from "react-router-dom";
 import CartHeader from "../header/cart-header";
+import { constSelector } from "recoil";
 
 const Cart: React.FunctionComponent = () => {
   const [cart, setCart] = useState<any[]>([]);
@@ -17,25 +18,34 @@ const Cart: React.FunctionComponent = () => {
     if (savedCart) {
       setCart(JSON.parse(savedCart));
     }
+    // console.log("----------------------------------------------------")
+    // console.log("lấy giỏ hàng savedCart: ")
+    // console.log(cart)
   }, []);
 
   useEffect(() => {
     if (cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(cart));
     }
+    // console.log("----------------------------------------------------")
+    // console.log("lấy giỏ hàng: ")
+    // console.log(cart)
   }, [cart]);
 
   const removeFromCart = (id: string) => {
-    const updatedCart = cart.filter((item) => item.id !== id);
+    const updatedCart = cart.filter((item) => item[0].id !== id);
     setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   const clearCart = () => {
     setCart([]);
-    localStorage.removeItem("cart"); 
+    // console.log("Xóa toàn bộ: ")
+    // console.log(cart)
+    localStorage.removeItem("cart")
   };
 
-  const totalPrice = formatter.format(cart.reduce((total, item) => total + item.price, 0));
+  const totalPrice = formatter.format(cart.reduce((total, item) => total + (item[0]?.price || 0), 0));
 
   return (
     <Page>
@@ -60,7 +70,7 @@ const Cart: React.FunctionComponent = () => {
                        {/* bug */}  
                       <Button
                         size="small"
-                        onClick={() => removeFromCart(item.id)} 
+                        onClick={() => removeFromCart(item[0].id)} 
                       >
                         Xoá
                       </Button>

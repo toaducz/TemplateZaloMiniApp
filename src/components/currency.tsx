@@ -22,7 +22,7 @@ const Currency: React.FunctionComponent = () => {
         const fetchCurrency = async () => {
             try {
                 const response = await fetch(
-                    '/api/admin/currencies',
+                    fado+'/api/admin/currencies',
                     {
                         method: 'GET',  
                         headers: headers,
