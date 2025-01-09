@@ -9,15 +9,15 @@ export default () => {
     root: "./src",
     base: "",
     plugins: [zaloMiniApp(), react(), tsconfigPaths()],
-    server: {
-      proxy: {
-        "/api": {
-          target: "https://staging-shop.fado.vn",
-          changeOrigin: true,
-          secure: false,
-        },
-      },
-    },
+    // server: {
+    //   proxy: {
+    //     "/api": {
+    //       target: "https://staging-shop.fado.vn",
+    //       changeOrigin: true,
+    //       secure: false,
+    //     },
+    //   },
+    // },
     
   });
 };

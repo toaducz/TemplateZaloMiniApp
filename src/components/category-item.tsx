@@ -41,7 +41,7 @@
       const fetchCategories = async () => {
         try {
           const response = await fetch(
-            '/api/admin/categories?page[number]=1',
+            fado + '/api/admin/categories?page[number]=1',
             {
               method: 'GET',
               headers: headers,

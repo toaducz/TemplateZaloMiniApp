@@ -35,7 +35,7 @@ const ProductItem: React.FunctionComponent = () => {
         const fetchProducts = async () => {
           try {
             const response = await fetch(
-              '/api/admin/products?page[number]=1',
+              fado + '/api/admin/products?page[number]=1',
               {
                 method: 'GET',
                 headers: headers,

@@ -39,7 +39,7 @@ const AllProduct: React.FunctionComponent = () => {
       try {
         setLoading(true);
         const response = await fetch(
-          `/api/admin/products?page[number]=${page}`,
+          fado + `/api/admin/products?page[number]=${page}`,
           {
             method: "GET",
             headers: headers,

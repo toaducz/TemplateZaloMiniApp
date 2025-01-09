@@ -53,7 +53,7 @@ const ProductDetail: React.FunctionComponent = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          '/api/admin/products/' + id,
+          fado + '/api/admin/products/' + id,
           {
             method: 'GET',
             headers: headers,
@@ -104,7 +104,7 @@ const ProductDetail: React.FunctionComponent = () => {
 
   return (
     <Page hideScrollbar={true}>
-      <Currency/>
+
       <HeaderProduct title={flower[0].descriptions?.[1]?.name ?? "Không có tên"} />
       <Page className="page">
         <Stack>
@@ -146,6 +146,7 @@ const ProductDetail: React.FunctionComponent = () => {
           </Box>
         </Stack>
       </Page>
+      <Currency/>
     </Page>
   );
 };

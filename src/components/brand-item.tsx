@@ -41,7 +41,7 @@ const BrandsItem: React.FunctionComponent = () => {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          '/api/admin/brands',
+          fado + '/api/admin/brands',
           {
             method: 'GET',
             headers: headers,
