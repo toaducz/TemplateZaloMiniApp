@@ -1,5 +1,8 @@
 Clone Frond-End của 1800Hoa trên # Zalo Mini App
 
+![image](https://github.com/user-attachments/assets/bacfc115-1424-4a08-b1eb-910337ea90de)
+
+
 ## Development
 
 ### Using Zalo Mini App Extension
