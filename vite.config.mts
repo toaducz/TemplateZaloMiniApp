@@ -12,7 +12,7 @@ export default () => {
     // server: {
     //   proxy: {
     //     "/api": {
-    //       target: "https://staging-shop.fado.vn",
+    //       target: "",
     //       changeOrigin: true,
     //       secure: false,
     //     },
