@@ -29,10 +29,7 @@ const ProductDetail: React.FunctionComponent = () => {
   });
 
   const headers = new Headers({
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer 1|CVPgFpL9i1kYdzGUrz02ySMn76kBoseALxXHHDL713f60738',
-    'apikey': '9cdfc6b4-2b4b-44b5-b427-b27c0dc32dfa',
-    'apiconnection': 'appmobile',
+    
 
   });
 

@@ -42,9 +42,9 @@ const Location: React.FunctionComponent = () => {
                     console.log("Access token:", accessToken);
 
                     const endpoint = "https://graph.zalo.me/v2.0/me/info";
-                    temp = "5t0n3c2oQmmUTpCCQhbj1HHvDW9deML3Kpz08YE8TKaKALmS7fH2M2ik6JDOcqPLVHj1Aq6zR55g9ZymTOGsDGCXQJKils150HX25mYfO6mzF7in3hzGDIeYQ7vRct0XP2WeNbIn61f-Qa5YMQXz86SMVK58q20IVnSCStI03WvG4oPIBgegC2LeSN9NrbCp9rP1JGpI7n4ZNaTL9CzS2YKA3beHnJiCCqCLPJxpC69EGnGvJ-8xMK9RPqLfnb8-NbDMRYsLMJiqEm970laZ02X62biutp1IEqq53mtlM4a0QtuzBV5_TG4rPoi0b7qt5n9wImESMHGX3K1VBOuP1om9E5elXpeq7nuyPpYB6YGE5JTvVe0j9NL6zcenPQXf3W"
+                    temp = "YOUR-KEY"
                     const userAccessToken = accessToken; // Cập nhật token hợp lệ
-                    const secretKey = "SnDf7NUV6vXRHv5RO7j4"; // Cập nhật secret key hợp lệ
+                    const secretKey = "YOUR-KEY"; // Cập nhật secret key hợp lệ
 
                     const options = {
                         headers: {
