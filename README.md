@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Zalo Mini App
+Clone của 1800Hoa trên # Zalo Mini App
 
 ## Development
 
@@ -46,6 +45,3 @@
 - [DevTools Documentation](https://mini.zalo.me/docs/dev-tools/)
 - [Ready-made Mini App Templates](https://mini.zalo.me/zaui-templates)
 - [Community Support](https://mini.zalo.me/community)
-=======
-# UI-ZALO-MINI-AP
->>>>>>> 72e790d79d9de9f08abbd5cac3e81d1b82e64e51
