@@ -1,4 +1,4 @@
-Clone của 1800Hoa trên # Zalo Mini App
+Clone Frond-End của 1800Hoa trên # Zalo Mini App
 
 ## Development
 
